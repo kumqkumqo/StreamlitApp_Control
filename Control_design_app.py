@@ -23,7 +23,7 @@ def show_st_step_wrap(s_funs_in, legs_in, target=1):
     try:
         st.pyplot(show_st_step(s_funs_in, legs_in, target))
     except:
-        st.write("Can't show Bodo graph well")
+        st.write("Can't show Step graph well")
 
 
 def show_st_bode_wrap(s_funs_in, legs_in):
@@ -93,7 +93,7 @@ def show_st_step(s_funs_in, legs_in, target=1):
         y_min = min(min(y), y_min)
     ax.axhline(y=target+thre, lw=1, ls='--', c='green')
     ax.axhline(y=target-thre, lw=1, ls='--', c='green')
-    ax.set_xlim(max(-1, -max(t[maxId])*0.1), max(t[maxId])*2)
+    ax.set_xlim(max(-1, -max(t[maxId])*0.1), max(0.1,max(t[maxId])*2))
     #ax.set_xlim(-1, t_max)
     ax.set_ylim(y_min - y_min * 0.1, y_max + y_max * 0.1)
     ax.legend()
